@@ -33,3 +33,27 @@ td {
 #content {
     width: 70%;
 }
+
+.nav {
+  margin-bottom: 3rem;
+  font-size: 1.2rem;
+  width: 100%;
+  text-align: center;
+  background-color: #130038;
+  color: #d1d1d1;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: #d1d1d1;
+}
+
+.nav__link:not(:last-of-type) {
+  margin-right: 2.5rem;
+
+}
+
+.nav__link--active,
+.nav__link:hover {
+  font-weight: bold;
+}

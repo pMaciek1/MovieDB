@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Movie Database</title>
+{% endblock %}
+
+
+{% block body %}
+<div class="content">
+        <table>
+            <tr>
+                <td>Image</td>
+                <td><img src="{{ movie['Poster'] }}" width="100" height="150" alt="No image"></td>
+            </tr>
+            <tr>
+                <td>Title</td>
+                <td>{{ movie["Title"] }}</td>
+            </tr>
+            <tr>
+                <td>Release date</td>
+                <td>{{ movie["Released"] }}</td>
+            </tr>
+            <tr>
+                <td>Type</td>
+                <td>{{ movie["Type"] }}</td>
+            </tr>
+            <tr>
+                <td>Length</td>
+                <td>{{ movie["Runtime"] }}</td>
+            </tr>
+            <tr>
+                <td>Plot</td>
+                <td>{{ movie["Plot"] }}</td>
+            </tr>
+            <tr>
+                <td>Ratings</td>
+                <td>
+                    {% for rating in movie["Ratings"] %}
+                    <a>{{ rating["Source"] }}:</a>
+                    <b>{{ rating["Value"] }}</b>
+                    <br>
+                    {% endfor %}
+                </td>
+
+            </tr>
+        </table>
+</div>
+{% endblock %}

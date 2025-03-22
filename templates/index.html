@@ -14,22 +14,25 @@
         <table>
             <tr>
                 <th>Movie</th>
+                <th>Release date</th>
                 <th>Added</th>
                 <th>Actions</th>
             </tr>
             {% for movie in movies %}
                 <tr>
-                    <td>{{ movie.content }}</td>
+                    <td>{{ movie.title }}</td>
+                    <td>{{ movie.release }}</td>
                     <td>{{ movie.date_created.date() }}</td>
                     <td>
                         <a href="/delete/{{movie.id}}">Delete</a>
                         <br>
-                        <a href="/update/{{movie.id}}">Update</a>
+                        <a href="/details/{{movie.imdbid}}">Details</a>
                     </td>
                 </tr>
             {% endfor %}
         </table>
     {% endif %}
-    <a href="/add/">Add Movie</a>
 </div>
+
+
 {% endblock %}
