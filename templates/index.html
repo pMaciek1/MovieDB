@@ -27,6 +27,10 @@
                         <a href="/delete/{{movie.id}}">Delete</a>
                         <br>
                         <a href="/details/{{movie.imdbid}}">Details</a>
+                        <br>
+                        {% if url_for(request.endpoint)=="/watched/" %}
+                        <a href="/watch/{{movie.id}}">Watched</a>
+                        {% endif %}
                     </td>
                 </tr>
             {% endfor %}

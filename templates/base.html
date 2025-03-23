@@ -5,17 +5,20 @@
     <meta name="veiwport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
     {% block head %}{% endblock %}
 </head>
-<body>
-    <header class="header">
+<header class="header">
         <nav class="nav">
             <h1 style="text-align:center">Movie Database</h1>
-            <a href="/" class="nav__link">Home</a>
+            <a href="/" class="nav__link">Movies Watched</a>
+            <a href="/watched/" class="nav__link">Movies to watch</a>
             <a href="/add/" class="nav__link">Search for movie</a>
             <a href="{{ previous }}" class="nav__link">Go back</a>
         </nav>
-    </header>
+</header>
+<body>
+
     {% block body %}{% endblock %}
 </body>
 </html>
