@@ -24,13 +24,11 @@
                     <td>{{ movie.release }}</td>
                     <td>{{ movie.date_created.date() }}</td>
                     <td>
-                        <a href="/delete/{{movie.id}}">Delete</a>
-                        <br>
-                        <a href="/details/{{movie.imdbid}}">Details</a>
-                        <br>
+                        <a href="/details/{{movie.imdbid}}" class="my_but_green">Details</a>
                         {% if url_for(request.endpoint)=="/watched/" %}
-                        <a href="/watch/{{movie.id}}">Watched</a>
+                        <a href="/watch/{{movie.id}}" class="my_but_blue">Watched</a>
                         {% endif %}
+                        <a href="/delete/{{movie.id}}" class="my_but_red">Delete</a>
                     </td>
                 </tr>
             {% endfor %}

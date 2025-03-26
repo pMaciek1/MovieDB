@@ -66,23 +66,36 @@ def add():
     if request.method == 'POST':
         title = request.form['title']
         return redirect(f'/add/search?title={title}')
-
     else:
         return render_template('add.html')
 
 @app.route('/add/search')
 def search():
-    title = request.args.get('title')
-    headers = {"accept": "application/json"}
-    response_list = requests.get(f'http://www.omdbapi.com/?s={title}&apikey={apikey}', headers=headers)
-    movie_list = []
-    for movie in response_list.json()['Search']:
-        movie_list.append(movie)
-    #return movie_list
-    return render_template('search.html', movie_list=movie_list, previous=request.referrer)
+    try:
+        title = request.args.get('title')
+        headers = {"accept": "application/json"}
+        response_list = requests.get(f'http://www.omdbapi.com/?s={title}&apikey={apikey}', headers=headers)
+        movie_list = []
+        for movie in response_list.json()['Search']:
+            movie_list.append(movie)
+        '''
+            if arg == 'Title':
+            movie_list_sorted_by_title = sorted(movie_list, key=lambda d: d['Title'])
+            return render_template('search.html', movie_list=movie_list_sorted_by_title, previous=request.referrer)
+        elif arg == 'Year':
+            movie_list_sorted_by_year = reversed(sorted(movie_list, key=lambda d: d['Year']))
+            return render_template('search.html', movie_list=movie_list_sorted_by_year, previous=request.referrer)
+        elif arg == 'Type':
+            movie_list_sorted_by_type = sorted(movie_list, key=lambda d: d['Type'])
+            return render_template('search.html', movie_list=movie_list_sorted_by_type, previous=request.referrer)
+        else:
+        '''
+        return render_template('search.html', movie_list=movie_list, previous=request.referrer)
+    except:
+        return 'Error, movie not found'
 
 @app.route('/add/add/<string:imdbID>', methods=['POST', 'GET'])
-def add_movie(imdbID):
+def add_movie(imdbID: int):
     response = requests.get(f'http://www.omdbapi.com/?i={imdbID}&apikey={apikey}')
     title = response.json()['Title']
     release_date = response.json()['Released']

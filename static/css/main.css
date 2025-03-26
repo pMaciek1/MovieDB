@@ -1,6 +1,6 @@
 body, html {
     margin: 0;
-    background-color: #636363;
+    background-color: #646464;
     font-family: sans-serif;
 }
 
@@ -9,16 +9,26 @@ body, html {
     width: auto;
 }
 
+.search{
+    margin 0 auto;
+    width: 300px;
+    margin-top: 6%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
 table, td, th {
     border: 1px solid #000000;
     border-radius: 5px;
-    margin-top: 6%
+    margin-top: 6%;
+    background-color: #393e41;
 }
 
 table {
     border-collapse: separate;
-    width: 60%;
-    background-color: #393e41;
+    width: 75%;
+    background-color: #1f1f1f;
     margin-left: auto;
     margin-right: auto;
 }
@@ -35,7 +45,18 @@ td {
 }
 
 .form {
-    margin-top: 20px;
+    text-align: center;
+}
+
+#title {
+    border-radius: 7px;
+    width: 100%;
+    height: 25px;
+}
+#search_but {
+    margin: 5px;
+    width: 20%;
+    height: 20px;
 }
 
 .header {
@@ -48,18 +69,17 @@ td {
 }
 
 .nav {
-  margin: 0;
-  padding: 0;
   font-size: 1.2rem;
   width: 100%;
-  text-align: center;
+  text-align: left;
   background-color: #d00000;
   color: #d1d1d1;
   position:fixed;
-  height: 10%;
+  height: 11%;
   top:0;
   left:0;
   overflow: hidden;
+  border-bottom: 3px solid #2b2b2b;
 }
 
 .nav__link {
@@ -67,12 +87,65 @@ td {
   color: #d1d1d1;
 }
 
-.nav__link:not(:last-of-type) {
-  margin-right: 2.5rem;
-
+.nav__link{
+    margin-left: 5px;
+    background-color: #3d3d3d;
+    border-radius: 2px;
+    margin-right: 1px;
+    margin-left: 1px
+    background-color: white;
+    color: white;
+    border: 2px solid black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+.nav__link:hover, .nav__link:active {
+  background-color: grey;
+  color: black;
+}
+.my_but_green:link, .my_but_green:visited {
+  background-color: white;
+  color: black;
+  border: 2px solid green;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
 }
 
-.nav__link--active,
-.nav__link:hover {
-  font-weight: bold;
+.my_but_green:hover, .my_but_green:active {
+  background-color: green;
+  color: white;
+}
+
+.my_but_red:link, .my_but_red:visited {
+  background-color: white;
+  color: black;
+  border: 2px solid red;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.my_but_red:hover, .my_but_red:active {
+  background-color: red;
+  color: white;
+}
+
+.my_but_blue:link, .my_but_blue:visited {
+  background-color: white;
+  color: black;
+  border: 2px solid blue;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.my_but_blue:hover, .my_but_blue:active {
+  background-color: blue;
+  color: white;
 }

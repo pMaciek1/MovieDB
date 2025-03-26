@@ -12,9 +12,9 @@
         <table>
             <tr>
                 <th>Image</th>
-                <th>Movie</th>
-                <th>Release Year</th>
-                <th>Type</th>
+                <th><a href="{{ url_for(request.endpoint, **request.view_args) }}">Movie</a></th>
+                <th><a href="{{ url_for(request.endpoint) }}">Release Year</a></th>
+                <th><a href="{{ url_for(request.endpoint) }}">Type</a></th>
                 <th>Actions</th>
             </tr>
             {% for movie in movie_list %}
@@ -24,8 +24,8 @@
                     <td>{{ movie["Year"] }}</td>
                     <td>{{ movie["Type"] }}</td>
                     <td>
-                        <a href="/add/add/{{movie['imdbID']}}">Add movie</a>
-                        <a href="/details/{{movie['imdbID']}}">Details</a>
+                        <a href="/add/add/{{movie['imdbID']}}" class="my_but_green">Add movie</a>
+                        <a href="/details/{{movie['imdbID']}}" class="my_but_blue">Details</a>
                     </td>
                 </tr>
             {% endfor %}
